@@ -93,8 +93,6 @@ class GameField ( object ):
                 self.spawn ( )
                 return True
             else:
-                screen.addstr('Move is not possible!')
-
                 return False
 
     def is_win(self):
@@ -173,7 +171,6 @@ class GameField ( object ):
         if direction in check:
             return check[direction] ( self.field )
         else:
-            stdscr.addstr('Move is not possiblr')
             return False
 
 
@@ -206,7 +203,7 @@ def main(stdscr):
             return 'Init'
         if action == 'Exit':
             return 'Exit'
-        if game_field.move ( action, stdscr ):  # move successful
+        if game_field.move ( action ):  # move successful
             if game_field.is_win ( ):
                 return 'Win'
             if game_field.is_gameover ( ):
