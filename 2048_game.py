@@ -9,15 +9,23 @@ actions_dict = dict ( zip ( letter_codes, actions * 2 ) )
 def winv():
     try:
         max_score = int(input("max score: "))
+        if max_score <= 0:
+            max_score = 2048
+            print("maximum score set to default.")
         return  max_score
     except:
+        print ( "maximum score set to default." )
         return 2048
 
 def board_size():
     try:
         bsize = int(input("Board size: "))
+        if bsize <= 0:
+            bsize = 5
+            print ( "board size set to default." )
         return  bsize
     except:
+        print ( "board size set to default." )
         return 5
 
 
