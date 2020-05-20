@@ -60,7 +60,7 @@ class GameField ( object ):
         self.field = np.zeros((self.size,self.size), dtype=int)
         self.spawn ( )
 
-    def move(self, direction, screen):
+    def move(self, direction):
         def move_row_left(row):
             def tighten(row):
                 new_row = [i for i in row if i != 0]
